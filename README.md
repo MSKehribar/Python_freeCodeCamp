@@ -1,8 +1,2 @@
 # Python_freeCodeCamp
-flgslkjghslghflsdfhg
-ııupuhu
-sg
-sdfgs
-fg
-sdfgs
-dfg
+arithmetic_arranger dosyası eklendi
