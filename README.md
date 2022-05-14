@@ -4,3 +4,4 @@ add_time dosyası eklendi
 budget dosyası eklendi
 shape_calculator dosyası eklendi
 prob_calculator dosyası eklendi
+dosyalarda düzeltmeler yapıldı
