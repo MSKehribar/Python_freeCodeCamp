@@ -1,3 +1,5 @@
+# In this project, the function is given the optional starting day of the week parameter, 
+# then the output will display the day of the week of the result.
 
 def add_time(saat,ekle,gun=False):
     Hafta=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
@@ -36,7 +38,8 @@ def add_time(saat,ekle,gun=False):
     elif gg==1: print("(next day)" , end=" ")
     print(end="\n") 
 
-     
+# Test part
+
 add_time("3:00 PM", "3:10")
 add_time("11:30 AM", "2:32", "Monday")
 add_time("11:43 AM", "00:20")

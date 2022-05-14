@@ -1,3 +1,6 @@
+# In this project programmed a rectangle class and square class with useing object oriented programming. 
+# And the square class a subclass of rectangle and inherit methods and attributes.
+
 class Rectangle:
     def __init__(self, gen, yuk):
         self.gen=gen
@@ -47,8 +50,8 @@ class Square(Rectangle):
         return "Square (Side={})".format(self.gen)
 
 
+#Test Part
 
-print("\n"*10)
 rect = Rectangle(10, 5)
 print(rect.get_area())
 rect.set_height(3)

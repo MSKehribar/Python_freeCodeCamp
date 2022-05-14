@@ -1,3 +1,7 @@
+# In this project instantiating objects based on different budget categories like food, clothing, and entertainment. 
+# Objects are  passed in the name of the category. Money deposits and withdraw works can beb registered. 
+# And also we can list of pecentage spending by categories
+
 class Category:
     def __init__(self, tanim):
         self.tanim = tanim
@@ -8,11 +12,9 @@ class Category:
         baslik = self.tanim.center(30, "*") + "\n"
         defter = ""
         for i in self.defter:
-            # format tanim and miktar
-            line_tanim = "{:<23}".format(i["tanim"])
-            line_miktar = "{:>7.2f}".format(i["miktar"])
-            # Truncate defter tanim and miktar to 23 and 7 characters respectively
-            defter += "{}{}\n".format(line_tanim[:23], line_miktar[:7])
+            satir_tanim = "{:<23}".format(i["tanim"])
+            satir_miktar = "{:>7.2f}".format(i["miktar"])
+            defter += "{}{}\n".format(satir_tanim[:23], satir_miktar[:7])
         toplam = "Total: {:.2f}".format(self.__durum)
         return baslik + defter + toplam
 
@@ -46,7 +48,7 @@ class Category:
 
 def create_spend_chart(kategoriler):
     harcama_miktari = []
-    # Get toplam harcama in each kategori
+    # Her kategorideki harcamaları al
     for kategori in kategoriler:
         harcama = 0
         for i in kategori.defter:
@@ -54,12 +56,12 @@ def create_spend_chart(kategoriler):
                 harcama += abs(i["miktar"])
         harcama_miktari.append(round(harcama, 2))
 
-    # Calculate percentage rounded down to the nearest 10
+    # yüzdeleri hesapla
     toplam = round(sum(harcama_miktari), 2)
     harcama_yuzdesi = list(map(lambda miktar: int((((miktar / toplam) * 10) // 1) * 10), harcama_miktari))
 
-    # Create the bar cizelge substrings
-    baslik = "Percentage harcama by kategori\n"
+    # çizelgeyi hazırla
+    baslik = "Percentage spending by categories\n"
 
     cizelge = ""
     for value in reversed(range(0, 101, 10)):
@@ -82,6 +84,7 @@ def create_spend_chart(kategoriler):
 
 
 
+#Test Part
 
 cuzdan_Y=Category("Yemek")
 cuzdan_A=Category("Arac")
